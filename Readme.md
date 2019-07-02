@@ -29,7 +29,49 @@ dependencies {
 
 ## Step 4: Download and paste this module in your package
 
-## Step 5: In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback
+## Step 5: Implement PaytmPaymentTransactionCallback interface.
+In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback
+```
+
+public class MainActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
+
+    @Override
+    public void onTransactionResponse(Bundle inResponse) {
+
+    }
+
+    @Override
+    public void networkNotAvailable() {
+
+    }
+
+    @Override
+    public void clientAuthenticationFailed(String inErrorMessage) {
+
+    }
+
+    @Override
+    public void someUIErrorOccurred(String inErrorMessage) {
+
+    }
+
+    @Override
+    public void onErrorLoadingWebPage(int iniErrorCode, String inErrorMessage, String inFailingUrl) {
+
+    }
+
+    @Override
+    public void onBackPressedCancelTransaction() {
+
+    }
+
+    @Override
+    public void onTransactionCancel(String inErrorMessage, Bundle inResponse) {
+
+    }
+}
+
+```
 
 ## Step 6: Create a simple request as shown below and you're good to go.
 ```

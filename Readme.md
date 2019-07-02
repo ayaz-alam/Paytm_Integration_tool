@@ -64,7 +64,7 @@ define('PAYTM_MERCHANT_KEY', 'XXXXXXXXXXXXXXX');
 after replacing the merchant key, upload this folder to your server and get the url to post request and change it in PaytmConfig.java file in package
 (You can use any hosting if you don't have your own server, 000webhost.com would do the work)
 
-### Step 5: Implement PaytmPaymentTransactionCallback interface.
+### Step 6: Implement PaytmPaymentTransactionCallback interface.
 In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback
 ```
 
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements PaytmPaymentTrans
 
 ```
 
-### Step 6: Create a simple request as shown below and you're good to go.
+### Step 7: Create a simple request as shown below and you're good to go.
 ```
 //Make sure to complete step 5, otherwise you'll need to create the callback
 PaytmTransaction transaction =new PaytmTransaction(this,this);

@@ -29,11 +29,40 @@ dependencies {
 
 ### Step 4: Download and paste this module in your package
 
-Download from here :* [Download Zip](https://github.com/Ayaz922/Paytm_Integration_tool/archive/master.zip)
+Download from here : [Download Zip](https://github.com/Ayaz922/Paytm_Integration_tool/archive/master.zip)
 
 
+### Step 5: Goto PaytmConfig java file and change credentials accordingly.
+```
+public class PaytmConfig {
 
+    //A boolean to fix the configuration of the paytm sdk, true for staging.
+    public static final boolean IS_STAGING =true;
+    //Merchant Id as provided by Paytm
+    public static final String MERCHANT_ID="MerchantIDXXXXX";
+    //Website : for staging use "WEBSTAGING" otherwise use the website provided after activation of program
+    public static final String WEBSITE ="WEBSTAGING";
+    //Industry type, use "Retail" for staging
+    public static final String INDUSTRY_TYPE ="Retail";
+    //Checksum generation URL, this is a url of remote server that executes a php config file to generate
+    // a checksum according to the api key and given fields.
+    public static final String CHECKSUM_GEN_URL ="https://..../generatepaytmchecksum";
 
+}
+```
+To get CHECKSUM_GEN_URL, you'll have to upload library provided by paytm itself,
+link to download is : [CheckSum Files](https://github.com/Paytm-Payments/Paytm_App_Checksum_Kit_PHP/archive/master.zip)
+after downloading, goto Paytm_App_Checksum_Kit_PHP/lib/config_paytm.php and change the value of PAYTM_MERCHANT_KEY constant with details received from Paytm.
+
+```
+<?php
+//Change the value here
+define('PAYTM_MERCHANT_KEY', 'XXXXXXXXXXXXXXX');
+?>
+```
+
+after replacing the merchant key, upload this folder to your server and get the url to post request and change it in PaytmConfig.java file in package
+(You can use any hosting if you don't have your own server, 000webhost.com would do the work)
 
 ### Step 5: Implement PaytmPaymentTransactionCallback interface.
 In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback

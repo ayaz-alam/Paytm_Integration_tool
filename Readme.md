@@ -210,8 +210,3 @@ public class MainActivity extends AppCompatActivity implements PaytmPaymentTrans
 }
 
    ```
-
-
-
-## Developer
-* [Ayaz Alam](https://github.com/Ayaz922)      Application Designer and Developer

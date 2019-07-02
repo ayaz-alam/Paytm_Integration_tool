@@ -3,7 +3,7 @@
 This is a simple library to include paytm into your application
 
 
-## Step 1:  Include paytm sdk dependency in **app level gradle**
+### Step 1:  Include paytm sdk dependency in **app level gradle**
 ```
 dependencies {
 	implementation('com.paytm:pgplussdk:1.3.3') {
@@ -12,7 +12,7 @@ dependencies {
 }
 ```
 
-## Step 2: Add Volley dependency in **app level gradle**
+### Step 2: Add Volley dependency in **app level gradle**
 ```
 dependencies {
 	implementation('com.paytm:pgplussdk:1.3.3') {
@@ -21,15 +21,21 @@ dependencies {
 }
 ```
 
-## Step 3: Add paytm activity in manifest like below
+### Step 3: Add paytm activity in manifest like below
 ```
 <activity android:name="com.paytm.pgsdk.PaytmPGActivity"
    android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|keyboard"/>
 ```
 
-## Step 4: Download and paste this module in your package
+### Step 4: Download and paste this module in your package
 
-## Step 5: Implement PaytmPaymentTransactionCallback interface.
+Download from here :* [Download Zip](https://github.com/Ayaz922/Paytm_Integration_tool/archive/master.zip)
+
+
+
+
+
+### Step 5: Implement PaytmPaymentTransactionCallback interface.
 In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback
 ```
 
@@ -73,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements PaytmPaymentTrans
 
 ```
 
-## Step 6: Create a simple request as shown below and you're good to go.
+### Step 6: Create a simple request as shown below and you're good to go.
 ```
 //Make sure to complete step 5, otherwise you'll need to create the callback
 PaytmTransaction transaction =new PaytmTransaction(this,this);

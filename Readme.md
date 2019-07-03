@@ -4,7 +4,7 @@ This is a simple library to include paytm into your application
 
 
 ### Step 1:  Include paytm sdk dependency in **app level gradle**
-```javacript
+```javascript
 dependencies {
 	implementation('com.paytm:pgplussdk:1.3.3') {
 		transitive = true;

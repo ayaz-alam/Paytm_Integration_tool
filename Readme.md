@@ -4,7 +4,7 @@ This is a simple library to include paytm into your application
 
 
 ### Step 1:  Include paytm sdk dependency in **app level gradle**
-```
+```javacript
 dependencies {
 	implementation('com.paytm:pgplussdk:1.3.3') {
 		transitive = true;
@@ -13,7 +13,7 @@ dependencies {
 ```
 
 ### Step 2: Add Volley dependency in **app level gradle**
-```
+```javascript
 dependencies {
 	implementation('com.paytm:pgplussdk:1.3.3') {
 		transitive = true;
@@ -22,7 +22,7 @@ dependencies {
 ```
 
 ### Step 3: Add paytm activity in manifest like below
-```
+```xml
 <activity android:name="com.paytm.pgsdk.PaytmPGActivity"
    android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|keyboard"/>
 ```
@@ -33,7 +33,7 @@ Download from here : [Download Zip](https://github.com/Ayaz922/Paytm_Integration
 
 
 ### Step 5: Goto PaytmConfig java file and change credentials accordingly.
-```
+```java
 public class PaytmConfig {
 
     //A boolean to fix the configuration of the paytm sdk, true for staging.
@@ -54,7 +54,7 @@ To get CHECKSUM_GEN_URL, you'll have to upload library provided by paytm itself,
 link to download is : [CheckSum Files](https://github.com/Paytm-Payments/Paytm_App_Checksum_Kit_PHP/archive/master.zip)
 after downloading, goto Paytm_App_Checksum_Kit_PHP/lib/config_paytm.php and change the value of PAYTM_MERCHANT_KEY constant with details received from Paytm.
 
-```
+```php
 <?php
 //Change the value here
 define('PAYTM_MERCHANT_KEY', 'XXXXXXXXXXXXXXX');
@@ -66,7 +66,7 @@ after replacing the merchant key, upload this folder to your server and get the 
 
 ### Step 6: Implement PaytmPaymentTransactionCallback interface.
 In your activity where you are taking transaction data, implement the callback PaytmPaymentTransactionCallback
-```
+```java
 
 public class MainActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements PaytmPaymentTrans
 ```
 
 ### Step 7: Create a simple request as shown below and you're good to go.
-```
+```java
 //Make sure to complete step 5, otherwise you'll need to create the callback
 PaytmTransaction transaction =new PaytmTransaction(this,this);
 transaction.initTransacation(orderId,customerId,transactionAmount,phoneNumber,emailAddress);
@@ -117,7 +117,7 @@ transaction.initTransacation(orderId,customerId,transactionAmount,phoneNumber,em
 
 ### MainActivity would look like this.
 
-   ```
+   ```java
 
 public class MainActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback {
 

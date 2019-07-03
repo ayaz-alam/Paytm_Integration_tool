@@ -15,9 +15,7 @@ dependencies {
 ### Step 2: Add Volley dependency in **app level gradle**
 ```javascript
 dependencies {
-	implementation('com.paytm:pgplussdk:1.3.3') {
-		transitive = true;
-	}
+	implementation 'com.android.volley:volley:1.1.1'
 }
 ```
 
